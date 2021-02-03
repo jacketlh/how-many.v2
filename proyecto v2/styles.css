@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #E9ECF4;
+    background-image: url("background1.jpg");
+    color: #000;
+    font-family: 'roboto', sans-serif;
+}
+.contenedor{
+    width: 90%;
+    min-height: 90vh;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: "header header header"
+                         /*"contenido contenido contenido"*/
+                         "sidebar sidebar sidebar"
+                         "widget-1 widget-2 widget-3"
+                         "footer footer footer";
+                         
+}
+
+.contenedor > div,
+.contenedor > a,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+    background: #fff;
+    padding: 20px;
+    border-radius: 1cm;
+}
+
+.contenedor .header{
+    background: rgba(0, 0, 0, 0.0);
+    color: #fff;
+    grid-area: header;
+    text-align: center;
+    
+
+  
+}
+/*.contenedor .contenido{
+    grid-area: contenido;
+
+}*/
+
+.contenedor .sidebar{
+    background: rgba(177, 169, 169, 0.3);
+    color:rgb(255, 255, 255);
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    grid-area: sidebar;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+}
+.contenedor .widget-1,
+.contenedor .widget-2,
+.contenedor .widget-3,
+.contenedor .widget-4{
+    background: #55a8fd;
+    color:rgb(255, 255, 255);
+    min-height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    box-shadow:inset 5px 5px 10px #000000, 
+    inset -5px -5px 10px black;
+}
+.contenedor .widget-1{
+    grid-area: widget-1;
+    background-image: url("navidad.png");
+    text-decoration: none;
+    
+
+}
+.contenedor .widget-2{
+    grid-area: widget-2;
+    background-image: url("new-year.jpg");
+    text-decoration: none;
+}
+.contenedor .widget-3{
+    grid-area: widget-3;
+    background-image: url("halloween.png");
+    text-decoration: none;
+}
+.contenedor .widget-4{
+    grid-area: widget-4;
+}
+
+
+.contenedor .footer{
+    background: rgba(0, 0, 0, 0.0);
+    color: #fff;
+    grid-area: footer;
+    align-self: end;
+    font-family: 'roboto', sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    
+}
+.footer h3{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    line-height: 3rem;
+    
+}
+.footer p{
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px;
+}
+
+@media screen and (max-width: 768px){
+    .contenedor {
+        grid-template-areas:"header header header"
+                            "contenido contenido contenido"
+                            "sidebar sidebar sidebar"
+                            "widget-1 widget-1 widget-1"
+                            "widget-2 widget-2 widget-2"
+                            "widget-3 widget-3 widget-3"
+                            "footer footer footer";
+    }
+    .contenedor .footer{
+        min-height: 100px;
+    }
+}
+
+
